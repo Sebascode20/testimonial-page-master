@@ -1,0 +1,118 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100vh;
+  font-family: "Sora";
+  background-color: #fafaf9;
+}
+
+object[data="./resources/Done_ring_round_fill.svg"] {
+  width: 18px;
+  padding-right: 0.6rem;
+}
+
+object[data="./resources/google-testimonial.svg"],
+object[data="./resources/meta-testimonial.svg"] {
+  width: 75px;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+ul,
+header {
+  padding: 0;
+}
+
+h1 {
+  margin: 0;
+}
+
+.author-info {
+  font-size: 0.875rem;
+  text-align: center;
+  margin-top: 1rem;
+  color: #374151;
+}
+
+.author-info a {
+  text-decoration: none;
+}
+
+.header,
+.main-content {
+  padding-inline: 1rem;
+}
+
+.main-content {
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+
+.main-content > p {
+  margin-block: 0.5rem;
+  line-height: 1.8;
+  color: #52525a;
+}
+
+.header h1 {
+  font-size: 2.25rem;
+}
+
+.header .header__image-container {
+  max-width: 100%;
+}
+
+.header__image-container {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.header .header__image-container object {
+  padding: 0.3rem;
+  background-color: #f5c044;
+  /*background: linear-gradient(to bottom, transparent, #f5c044);*/
+  border-radius: 50%;
+  aspect-ratio: 1;
+}
+
+.list__item {
+  display: inline-flex;
+  list-style-type: none;
+  font-size: 0.875rem;
+  margin-block: 0.4rem;
+  color: #52525a;
+  font-weight: 300;
+}
+
+.google-card,
+.meta-card {
+  max-width: 400px;
+  padding-block: 1.7rem;
+  padding-inline: 1.5rem;
+  margin-block: 1rem;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.google-card__header,
+.meta-card__header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.google-card__subtitle,
+.meta-card__subtitle {
+  font-size: 14px;
+}
+
+.google-card__subtitle + p,
+.meta-card__subtitle + p {
+  font-size: 1rem;
+  color: #52525a;
+  font-weight: 400;
+}
