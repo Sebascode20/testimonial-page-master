@@ -1,10 +1,17 @@
 body {
+  display: flex;
+  flex-direction: column;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  height: 100vh;
+  min-height: 100vh;
   font-family: "Sora";
+  font-size: 1.25rem;
   background-color: #fafaf9;
+}
+
+main {
+  flex: 1;
 }
 
 object[data="./resources/Done_ring_round_fill.svg"] {
@@ -15,10 +22,6 @@ object[data="./resources/Done_ring_round_fill.svg"] {
 object[data="./resources/google-testimonial.svg"],
 object[data="./resources/meta-testimonial.svg"] {
   width: 75px;
-}
-
-p {
-  text-wrap: pretty;
 }
 
 ul,
@@ -39,6 +42,13 @@ h1 {
 
 .author-info a {
   text-decoration: none;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .header,
@@ -74,7 +84,7 @@ h1 {
 .header .header__image-container object {
   padding: 0.3rem;
   background-color: #f5c044;
-  /*background: linear-gradient(to bottom, transparent, #f5c044);*/
+  background: linear-gradient(to bottom, transparent, #f5c044);
   border-radius: 50%;
   aspect-ratio: 1;
 }
@@ -90,12 +100,24 @@ h1 {
 
 .google-card,
 .meta-card {
-  max-width: 400px;
-  padding-block: 1.7rem;
-  padding-inline: 1.5rem;
+  max-width: 350px;
+  padding-block: 1.5rem;
+  padding-left: 2.5rem;
+  padding-right: 0;
   margin-block: 1rem;
   background-color: #fff;
   border-radius: 10px;
+  box-shadow: 0px 30px 100px 0px rgba(17, 23, 41, 0.05);
+}
+
+.cards p {
+  line-height: 1.8;
+  margin: 0;
+}
+
+.main-content > p,
+.meta-card {
+  text-wrap: balance;
 }
 
 .google-card__header,
@@ -115,4 +137,55 @@ h1 {
   font-size: 1rem;
   color: #52525a;
   font-weight: 400;
+}
+
+@media screen and (min-width: 42.5rem) {
+  .header,
+  .main-content {
+    padding-inline: 2rem;
+  }
+
+  .google-card {
+    align-self: flex-end;
+    text-wrap: balance;
+  }
+
+  .list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main-content {
+    grid-template-columns: 1fr;
+  }
+
+  .main-content > p {
+    text-wrap: initial;
+  }
+}
+
+@media screen and (min-width: 80rem) {
+  .cards {
+    justify-content: start;
+  }
+
+  .main-content {
+    grid-auto-flow: column;
+    grid-auto-rows: 160px;
+  }
+
+  .main-content > p {
+    grid-column-start: 1;
+    grid-row-end: 1;
+    max-width: 600px;
+  }
+
+  .meta-card {
+    margin-right: 225px;
+  }
+
+  .list {
+    flex-direction: column-reverse;
+    grid-row-start: 1;
+  }
 }
